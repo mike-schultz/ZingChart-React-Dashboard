@@ -59,7 +59,7 @@ var App = React.createClass({
     },
     render : function(){
         return (
-            <div>
+            <div id="chart-containers">
                 <CustomArea id="chart1" height="300" width="1000" values={this.state.myAreaValues}/>
                 <CustomStackedBar id="chart2" height="300" width="1000" series={this.state.myStackedSeries}/>
                 <CustomMap id="chart3" height="300" width="1000" series={this.state.myMapSeries}/>
@@ -67,7 +67,7 @@ var App = React.createClass({
         )
     },
     componentDidMount : function(){
-        setInterval(this.modifyData, 600);
+        setInterval(this.modifyData, 2000);
     },
     modifyData : function(){
         var newData = DataStore.generateSingleDataset(this.state.originalState[this.state.originalState.length-1], 3600000);
